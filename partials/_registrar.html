@@ -1,0 +1,35 @@
+<div class="row">
+    <h3>Registrar Incidente</h3>
+</div>
+
+<div class="row">
+        <form class="col s12" id="forma" method="POST" action="registrar.php">
+          <div class="row">
+            <div class="input-field col s12">
+                    <select name="lugar">
+                    <option value="" disabled selected>Elige un lugar</option>
+
+                        <?php foreach ($lugares as $lugar): ?>
+                            <option value="<?= $lugar[0] ?>"><?= $lugar[1] ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <label>Elegir lugar</label> 
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+                    <select name="tipo">
+                        <option value="" disabled selected>Elige un tipo de incidente</option>
+                        <?php foreach ($tipos as $tipo): ?>
+                            <option value="<?= $tipo[0] ?>"><?= $tipo[1] ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <label>Elegir tipo de incidente</label> 
+            </div>
+          </div>
+        </form>
+        <div class="row">
+                <button class="waves-effect waves-light btn" type="submit" form="forma">Registrar</button>
+            </div>
+      </div>
